@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://23jyplxohquf"]
+
+[ext_resource type="PackedScene" uid="uid://cqwkq0jbghppx" path="res://player.tscn" id="1_ta315"]
+[ext_resource type="Texture2D" uid="uid://dxr5g2isgtp0" path="res://MV5BMTQ5MzkzNTIyN15BMl5BanBnXkFtZTYwNzUzOTA2._V1_FMjpg_UX1000_.jpg" id="2_c0rm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_li5nq"]
+size = Vector2(649, 46)
+
+[node name="Scene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Player" parent="." instance=ExtResource("1_ta315")]
+position = Vector2(202, -10)
+
+[node name="Player2" parent="." instance=ExtResource("1_ta315")]
+position = Vector2(234, 80)
+mass = 0.407
+
+[node name="Player3" parent="." instance=ExtResource("1_ta315")]
+position = Vector2(342, 46)
+mass = 2.265
+
+[node name="Player4" parent="." instance=ExtResource("1_ta315")]
+position = Vector2(126, 121)
+
+[node name="Player5" parent="." instance=ExtResource("1_ta315")]
+position = Vector2(288, -39)
+mass = 2.035
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(279, 131)
+zoom = Vector2(1.25, 1.25)
+
+[node name="John Floor" type="StaticBody2D" parent="."]
+position = Vector2(341, 273)
+
+[node name="Sprite2D" type="Sprite2D" parent="John Floor"]
+scale = Vector2(0.65, 0.03)
+texture = ExtResource("2_c0rm2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="John Floor"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_li5nq")
